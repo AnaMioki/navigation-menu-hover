@@ -1,0 +1,56 @@
+/* Importa a fonte "Poppins" do Google Fonts e define diferentes pesos e estilos para uso no site */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Aplica estilos gerais a todos os elementos da página */
+* {
+    margin: 0; /* Remove a margem padrão de todos os elementos */
+    padding: 0; /* Remove o padding padrão de todos os elementos */
+    box-sizing: border-box; /* Inclui o padding e a borda na largura e altura dos elementos */
+    font-family: 'Poppins', sans-serif; /* Define a fonte "Poppins" como a fonte padrão */
+}
+
+/* Define o estilo do contêiner principal */
+.container {
+    height: 100vh; /* Define a altura do contêiner como 100% da altura da viewport (tela) */
+    width: 100%; /* Define a largura do contêiner como 100% da largura disponível */
+    background: #2192ff; /* Aplica um fundo azul ao contêiner */
+    display: flex; /* Usa Flexbox para organizar os elementos filhos */
+    align-items: center; /* Alinha os elementos filhos verticalmente ao centro */
+    justify-content: center; /* Alinha os elementos filhos horizontalmente ao centro */
+}
+
+/* Estiliza a barra de navegação */
+nav {
+    background: #fff; /* Define o fundo da barra de navegação como branco */
+    border-radius: 9px; /* Arredonda os cantos da barra de navegação */
+    padding: 30px; /* Aplica um espaçamento interno de 30px ao redor do conteúdo da barra */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4); /* Adiciona uma sombra à barra de navegação */
+}
+
+/* Estiliza os itens da lista dentro da barra de navegação */
+nav ul li {
+    display: inline-block; /* Faz com que os itens da lista sejam exibidos em linha, um ao lado do outro */
+    list-style: none; /* Remove a marcação padrão de lista (bolinhas ou números) */
+    font-size: 2rem; /* Define o tamanho da fonte dos itens como 2 rem (relativo ao tamanho da fonte base) */
+    padding: 0 10px; /* Adiciona um espaçamento interno de 10px à esquerda e à direita de cada item */
+    margin: 0; /* Remove qualquer margem dos itens */
+    cursor: pointer; /* Altera o cursor para indicar que o item é clicável */
+    position: relative; /* Define a posição como relativa para permitir o uso de pseudo-elementos como ::after */
+}
+
+/* Estiliza o pseudo-elemento ::after que aparece abaixo dos itens da lista */
+nav ul li::after {
+    content: ''; /* Cria um conteúdo vazio */
+    width: 0%; /* Inicia o pseudo-elemento com largura 0 */
+    height: 3px; /* Define a altura da linha como 3px */
+    background: #2192ff; /* Define a cor de fundo da linha como azul */
+    position: absolute; /* Posiciona o pseudo-elemento em relação ao item da lista */
+    left: 0; /* Alinha o pseudo-elemento à esquerda do item */
+    bottom: -10px; /* Posiciona o pseudo-elemento 10px abaixo do item */
+    transition: 0.5s; /* Aplica uma transição suave de 0.5s ao alterar a largura do pseudo-elemento */
+}
+
+/* Expande a linha sob o item da lista quando o mouse passa por cima */
+nav ul li:hover::after {
+   width: 100%; /* Aumenta a largura da linha para 100%, criando um efeito de sublinhado */
+}
